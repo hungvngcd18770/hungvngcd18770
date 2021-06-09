@@ -17,7 +17,8 @@ namespace ASPDevApp.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var categoryInDb = _context.Categories.ToList();
+            return View(categoryInDb);
         }
         public ActionResult Details(int id)
         {
