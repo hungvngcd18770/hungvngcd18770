@@ -19,5 +19,11 @@ namespace ASPDevApp.Controllers
         {
             return View();
         }
+        public ActionResult Details(int id)
+        {
+            var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
+            return View(categoryInDb);
+        }
+
     }
 }
