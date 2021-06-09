@@ -1,4 +1,5 @@
 ﻿using ASPDevApp.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,14 @@ namespace ASPDevApp.Controllers
             _context = new ApplicationDbContext();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var categoryInDb = _context.Categories.ToList();
-            return View(categoryInDb);
+            var categories = _context.Categories.ToList();
+            if (!searchString.IsNullOrWhiteSpace())
+            {
+                categories = _context.Categories.Where(t => t.Description.Contains(searchString)).ToList();
+            }
+            return View(categories);
         }
         public ActionResult Details(int id)
         {
