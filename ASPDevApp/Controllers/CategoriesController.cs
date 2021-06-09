@@ -25,6 +25,14 @@ namespace ASPDevApp.Controllers
             var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
             return View(categoryInDb);
         }
+        public ActionResult Delete(int id)
+        {
+            var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
+            if (categoryInDb == null) return HttpNotFound();
+            _context.Categories.Remove(categoryInDb);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }
