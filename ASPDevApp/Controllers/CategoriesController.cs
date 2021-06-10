@@ -26,9 +26,25 @@ namespace ASPDevApp.Controllers
             return View(categories);
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Category category)
+        {
+
+            var newCategory = new Category()
+            {
+                Name = category.Name,
+                Description = category.Description,
+            };
+
+            _context.Categories.Add(newCategory);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
         public ActionResult Details(int id)
         {
