@@ -6,9 +6,11 @@
 <h1>Index Category</h1>
 <style>
     h1 {
-        text-align: center;
+        display: inline-block;
+        font: bold 4.5em/1.5 Bebas, sans-serif;
+        color: #5CA17C; /*non-webkit fallback*/
+        font-size: 72px;
         text-transform: uppercase;
-        color: #4CAF50;
     }
 </style>
 @using (Html.BeginForm("Index", "Categories", FormMethod.Get))

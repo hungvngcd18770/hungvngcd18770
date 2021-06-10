@@ -3,5 +3,26 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
+<h2>Create a new Category</h2>
+<style>
+    h2 {
+        display: inline-block;
+        font: bold 4.5em/1.5 Bebas, sans-serif;
+        color: #5CA17C; /*non-webkit fallback*/
+        font-size: 72px;
+        text-transform: uppercase;
+    }
+</style>
+<form>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="Enter Todo Description ..." />
+    </div>
+    <div class="form-group">
+        <label>Category Name</label>
+        <input type="text" class="form-control" placeholder="Enter Todo Category Name ..." />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

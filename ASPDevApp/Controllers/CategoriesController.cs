@@ -25,6 +25,7 @@ namespace ASPDevApp.Controllers
             }
             return View(categories);
         }
+
         public ActionResult Create()
         {
             return View();
