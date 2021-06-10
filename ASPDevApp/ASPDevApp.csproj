@@ -178,6 +178,10 @@
     <Compile Include="Migrations\202106090431133_CategoriesTable.Designer.cs">
       <DependentUpon>202106090431133_CategoriesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.cs" />
+    <Compile Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.Designer.cs">
+      <DependentUpon>202106101821506_AddRequiredFieldsToCategoriesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -266,6 +270,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106090431133_CategoriesTable.resx">
       <DependentUpon>202106090431133_CategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.resx">
+      <DependentUpon>202106101821506_AddRequiredFieldsToCategoriesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
