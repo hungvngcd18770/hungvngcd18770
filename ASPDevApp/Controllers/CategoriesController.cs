@@ -25,6 +25,10 @@ namespace ASPDevApp.Controllers
             }
             return View(categories);
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
         public ActionResult Details(int id)
         {
             var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
