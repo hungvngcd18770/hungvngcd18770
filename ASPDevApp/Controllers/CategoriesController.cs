@@ -18,6 +18,7 @@ namespace ASPDevApp.Controllers
 
         public ActionResult Index(string searchString)
         {
+
             var categories = _context.Categories.ToList();
             if (!searchString.IsNullOrWhiteSpace())
             {
@@ -34,7 +35,10 @@ namespace ASPDevApp.Controllers
         [HttpPost]
         public ActionResult Create(Category category)
         {
-
+            if (!ModelState.IsValid)
+            {
+                return View(category);
+            }
             var newCategory = new Category()
             {
                 Name = category.Name,

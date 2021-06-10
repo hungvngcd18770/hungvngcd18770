@@ -15,10 +15,12 @@
 </style>
 @using (Html.BeginForm("Create", "Categories", FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Name Cateogry..." })
-    </div>
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Name Cateogry..." })
+    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+</div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Description)
