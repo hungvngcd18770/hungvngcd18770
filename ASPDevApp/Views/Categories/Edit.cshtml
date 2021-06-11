@@ -1,0 +1,23 @@
+﻿@model ASPDevApp.Models.Category
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit a Category</h2>
+
+@using (Html.BeginForm("Edit", "Categories", FormMethod.Post))
+{
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.HiddenFor(model => model.Id)
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+    @Html.LabelFor(model => model.Description)
+    @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+} 

@@ -53,7 +53,7 @@
                 <td>
                     @Html.ActionLink("Details", "Details", "Categories", new { id = item.Id }, new { @class = "btn btn-primary" })
                     @Html.ActionLink("Delete", "Delete", "Categories", new { id = item.Id }, new { @class = "btn btn-danger" })
-                    <a href="#" class="btn btn-default">Edit</a>
+                    @Html.ActionLink("Edit","Edit","Categories",new { id = item.Id },new { @class = "btn btn-default" })
                 </td>
             </tr>
         }

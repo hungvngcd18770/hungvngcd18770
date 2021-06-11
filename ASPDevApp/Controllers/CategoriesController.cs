@@ -63,5 +63,16 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null) return HttpNotFound();
+
+            var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
+
+            if (categoryInDb == null) return HttpNotFound();
+
+            return View(categoryInDb);
+        }
     }
 }
