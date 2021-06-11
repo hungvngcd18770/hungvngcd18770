@@ -19,13 +19,14 @@
 <div class="form-group">
     @Html.LabelFor(m => m.Name)
     @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Name Cateogry..." })
-    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
 </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Description)
-        @Html.TextBoxFor(m => m.Description, new { @type = "form-control", @placeholder = "Enter Description...." })
-    </div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextBoxFor(m => m.Description, new { @type = "form-control", @placeholder = "Enter Description...." })
+    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+</div>
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Create a Category</button>
