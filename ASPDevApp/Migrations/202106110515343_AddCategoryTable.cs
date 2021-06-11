@@ -3,7 +3,7 @@ namespace ASPDevApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CategoriesTable : DbMigration
+    public partial class AddCategoryTable : DbMigration
     {
         public override void Up()
         {
@@ -12,8 +12,8 @@ namespace ASPDevApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Description = c.String(),
+                        Name = c.String(nullable: false),
+                        Description = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
