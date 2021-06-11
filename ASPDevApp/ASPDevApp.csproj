@@ -174,19 +174,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106090431133_CategoriesTable.cs" />
-    <Compile Include="Migrations\202106090431133_CategoriesTable.Designer.cs">
-      <DependentUpon>202106090431133_CategoriesTable.cs</DependentUpon>
+    <Compile Include="Migrations\202106110515343_AddCategoryTable.cs" />
+    <Compile Include="Migrations\202106110515343_AddCategoryTable.Designer.cs">
+      <DependentUpon>202106110515343_AddCategoryTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.cs" />
-    <Compile Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.Designer.cs">
-      <DependentUpon>202106101821506_AddRequiredFieldsToCategoriesTable.cs</DependentUpon>
+    <Compile Include="Migrations\202106110520054_Add.cs" />
+    <Compile Include="Migrations\202106110520054_Add.Designer.cs">
+      <DependentUpon>202106110520054_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106110523242_AddCousrseTable.cs" />
+    <Compile Include="Migrations\202106110523242_AddCousrseTable.Designer.cs">
+      <DependentUpon>202106110523242_AddCousrseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106110535157_adddd.cs" />
+    <Compile Include="Migrations\202106110535157_adddd.Designer.cs">
+      <DependentUpon>202106110535157_adddd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\TraineeProfile.cs" />
+    <Compile Include="Models\TrainerProfile.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -268,11 +279,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106090431133_CategoriesTable.resx">
-      <DependentUpon>202106090431133_CategoriesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106110515343_AddCategoryTable.resx">
+      <DependentUpon>202106110515343_AddCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106101821506_AddRequiredFieldsToCategoriesTable.resx">
-      <DependentUpon>202106101821506_AddRequiredFieldsToCategoriesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106110520054_Add.resx">
+      <DependentUpon>202106110520054_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106110523242_AddCousrseTable.resx">
+      <DependentUpon>202106110523242_AddCousrseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106110535157_adddd.resx">
+      <DependentUpon>202106110535157_adddd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

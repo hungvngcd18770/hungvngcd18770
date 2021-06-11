@@ -7,13 +7,13 @@ namespace ASPDevApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CategoriesTable : IMigrationMetadata
+    public sealed partial class Add : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CategoriesTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Add));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106090431133_CategoriesTable"; }
+            get { return "202106110520054_Add"; }
         }
         
         string IMigrationMetadata.Source
