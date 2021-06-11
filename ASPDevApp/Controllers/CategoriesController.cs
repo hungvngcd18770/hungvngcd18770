@@ -77,7 +77,6 @@ namespace ASPDevApp.Controllers
         [HttpPost]
         public ActionResult Edit(Category category)
         {
-
             var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == category.Id);
             categoryInDb.Name = category.Name;
             categoryInDb.Description = category.Description;
