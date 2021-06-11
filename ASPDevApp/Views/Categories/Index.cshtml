@@ -3,27 +3,33 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Index Category</h1>
+<h1>
+    Index Category
+</h1>
 <style>
     h1 {
         display: inline-block;
         font: bold 4.5em/1.5 Bebas, sans-serif;
-        color: #5CA17C; /*non-webkit fallback*/
+        color: #5CA17C;
         font-size: 72px;
         text-transform: uppercase;
     }
 </style>
-@using (Html.BeginForm("Index", "Categories", FormMethod.Get))
+
+
+@using (Html.BeginForm("Index", "Categories", "POST"))
 {
     <div class="form-group">
-        <label>Search by Description name:</label>
+        <label for="fname">Search by Category Name:</label><br>
         @Html.TextBox("searchString", null, new { @class = "form-control" })
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 }
-
+@Html.ActionLink("Create new Category", "Create", "Categories",
+    null,
+    new { @class = "btn btn-primary" })
 
 <table class="table table-bordered">
     <thead>
