@@ -198,6 +198,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ForeingnkeyAttribute.cs" />
     <Compile Include="Models\TraineeProfile.cs" />
     <Compile Include="Models\TrainerProfile.cs" />
     <Compile Include="Models\Category.cs" />

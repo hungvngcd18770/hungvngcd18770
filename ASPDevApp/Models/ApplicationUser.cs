@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -14,6 +15,15 @@ namespace ASPDevApp.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+        [DisplayName("Full Name")]
+        public string FullName { get; set; }
+        public virtual TrainerProfile TrainerUser { get; set; }
+        public virtual TraineeProfile TraineeUser { get; set; }
+
+        public ApplicationUser()
+        {
+
         }
     }
 }
