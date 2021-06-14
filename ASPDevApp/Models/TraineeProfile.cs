@@ -27,7 +27,7 @@ namespace ASPDevApp.Models
         public string DateOfBirth { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+
 
     }
 }

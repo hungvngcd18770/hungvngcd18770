@@ -30,6 +30,5 @@ namespace ASPDevApp.Models
         public int PhoneNumber { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; } //link object với courseID
-        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
