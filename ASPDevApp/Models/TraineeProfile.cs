@@ -12,13 +12,18 @@ namespace ASPDevApp.Models
         [Foreingnkey("ApplicationUser")]
         [Key]
         public int TraineeId { get; set; }
+        [Required]
         [DisplayName("Trainee First Name")]
         public string FristName { get; set; }
+        [Required]
         [DisplayName("Trainee Last Name")]
         public string LastName { get; set; }
+        [Required]
         [DisplayName("Trainee Phone Number")]
         public string PhoneNumber { get; set; }
+        [Required]
         [DisplayName("Trainee Date Of Birth")]
+
         public string DateOfBirth { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }

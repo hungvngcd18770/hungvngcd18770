@@ -13,18 +13,23 @@ namespace ASPDevApp.Models
         [Foreingnkey("ApplicationUser")]
         [Key]
         public int TrainerId {get;set;}
+        [Required]
         [DisplayName("Trainer First Name")]
         public string FirstName { get; set; }
+        [Required]
         [DisplayName("Trainer Last Name")]
         public string LastName { get; set; }
+        [Required]
         [DisplayName("Trainer Date Of Birth")]
         public int DateOfBirth { get; set; }
+        [Required]
         [DisplayName("Trainer Gmail")]
         public string Gmail { get; set; }
+        [Required]
         [DisplayName("Trainer Phone Number")]
         public int PhoneNumber { get; set; }
         public int? CourseId { get; set; }
-        public Course Course { get; set; }
+        public Course Course { get; set; } //link object với courseID
         public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
