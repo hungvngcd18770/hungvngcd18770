@@ -23,8 +23,7 @@ namespace ASPDevApp.Models
         public string Gmail { get; set; }
         [DisplayName("Trainer Phone Number")]
         public int PhoneNumber { get; set; }
-        public int? CourseId { get; set; }
-        public Course Course { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+      
+        
     }
 }
