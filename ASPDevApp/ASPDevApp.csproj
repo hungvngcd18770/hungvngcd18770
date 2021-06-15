@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202106140309504_DbContext.Designer.cs">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106150324489_addTrain.cs" />
+    <Compile Include="Migrations\202106150324489_addTrain.Designer.cs">
+      <DependentUpon>202106150324489_addTrain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -301,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140309504_DbContext.resx">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150324489_addTrain.resx">
+      <DependentUpon>202106150324489_addTrain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

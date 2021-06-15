@@ -10,9 +10,10 @@ namespace ASPDevApp.Models
 {
     public class TrainerProfile
     {
-        [Foreingnkey("ApplicationUser")]
+        [Foreingnkey("User")]
         [Key]
-        public int TrainerId {get;set;}
+        public string TrainerId {get;set;}
+        public ApplicationUser User { get; set; }
         [Required]
         [DisplayName("Trainer First Name")]
         public string FirstName { get; set; }
@@ -28,7 +29,7 @@ namespace ASPDevApp.Models
         [Required]
         [DisplayName("Trainer Phone Number")]
         public int PhoneNumber { get; set; }
-        public int? CourseId { get; set; }
-        public Course Course { get; set; } //link object với courseID
+
+        
     }
 }
