@@ -13,5 +13,18 @@ namespace ASPDevApp.Controllers
         {
             return View();
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        public ActionResult Delete()
+        {
+            return View();
+        }
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
     }
 }
