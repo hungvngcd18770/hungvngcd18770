@@ -16,10 +16,7 @@ namespace ASPDevApp.Models
             // Add custom user claims here
             return userIdentity;
         }
-        [DisplayName("Full Name")]
-        public string FullName { get; set; }
-        public virtual TrainerProfile TrainerUser { get; set; }
-        public virtual TraineeProfile TraineeUser { get; set; }
+
 
         public ApplicationUser()
         {

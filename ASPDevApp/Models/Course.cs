@@ -17,6 +17,7 @@ namespace ASPDevApp.Models
         [StringLength(255)]
         [DisplayName("Course Name")]
         public string Name { get; set; }
+        [StringLength(255)]
         [Required(ErrorMessage = "Description should not be Empty !!!")]
         [DisplayName("Course Description")]
         public string Description { get; set; }
