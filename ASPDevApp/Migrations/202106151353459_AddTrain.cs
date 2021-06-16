@@ -3,7 +3,7 @@ namespace ASPDevApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class adđhh : DbMigration
+    public partial class AddTrain : DbMigration
     {
         public override void Up()
         {

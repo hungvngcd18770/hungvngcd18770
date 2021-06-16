@@ -197,13 +197,9 @@
     <Compile Include="Migrations\202106140309504_DbContext.Designer.cs">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106150324489_addTrain.cs" />
-    <Compile Include="Migrations\202106150324489_addTrain.Designer.cs">
-      <DependentUpon>202106150324489_addTrain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106150936363_adđhh.cs" />
-    <Compile Include="Migrations\202106150936363_adđhh.Designer.cs">
-      <DependentUpon>202106150936363_adđhh.cs</DependentUpon>
+    <Compile Include="Migrations\202106151353459_AddTrain.cs" />
+    <Compile Include="Migrations\202106151353459_AddTrain.Designer.cs">
+      <DependentUpon>202106151353459_AddTrain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -316,11 +312,8 @@
     <EmbeddedResource Include="Migrations\202106140309504_DbContext.resx">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106150324489_addTrain.resx">
-      <DependentUpon>202106150324489_addTrain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106150936363_adđhh.resx">
-      <DependentUpon>202106150936363_adđhh.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106151353459_AddTrain.resx">
+      <DependentUpon>202106151353459_AddTrain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
