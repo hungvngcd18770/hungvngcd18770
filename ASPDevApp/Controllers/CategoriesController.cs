@@ -52,7 +52,7 @@ namespace ASPDevApp.Controllers
         }
         public ActionResult Details(int id)
         {
-            var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);
+            var categoryInDb = _context.Categories.SingleOrDefault(t => t.Id == id);     //tìm  Biến Id 
             return View(categoryInDb);
         }
         public ActionResult Delete(int id)
