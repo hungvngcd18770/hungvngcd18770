@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ASPDevApp.Models.Course>
 @{
     ViewBag.Title = "Index";
 }
@@ -36,19 +36,25 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var data in Model)
+        @foreach (var item in Model)
         {
             <tr>
-                <td>@data.Id</td>
-                <td>@data.Description</td>
-                <td>@data.Category.Name</td>
+                <td>@item.Id</td>
+                <td>@item.Description</td>
+                <td>@item.Category.Name</td>
                 <td>
                     @Html.ActionLink("Update Course", "Update", "Courses",
-                              new { id = data.Id },
+                              new { id = item.Id },
                               new { @class = "btn btn-primary" })
                     @Html.ActionLink("Delete this Course", "Delete", "Courses",
-                                 new { id = data.Id },
+                                 new { id = item.Id },
                                  new { @class = "btn btn-danger" })
+                    @Html.ActionLink("List Trainer", "Index", "AssignTrainerCourses",
+                             new { id = item.Id },
+                             new { @class = "btn btn-success" })
+                    @Html.ActionLink("List Trainee", "Index", "AssignTraineeCourses",
+                                new { id = item.Id },
+                                new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
