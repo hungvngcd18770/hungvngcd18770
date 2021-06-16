@@ -9,20 +9,33 @@ namespace ASPDevApp.Controllers
 {
     public class TraineesController : Controller
     {
-        private TraineeProfile _traineeProfile = new TraineeProfile()
+        private List<TraineeProfile> _traineeProfiles = new List<TraineeProfile >();
+        
+        public TraineesController()
         {
-            TraineeId = 1,
-            FristName = "Quang",
-            LastName = "Tran",
-            PhoneNumber = 1234556,
-            DateOfBirth = 22/03/2000,
-            Gmail = "trandangquang@gmail.com",
-        };
- 
+            _traineeProfiles.Add(new TraineeProfile()
+            {
+                TraineeId = 1,
+                FristName = "Quang",
+                LastName = "Tran",
+                PhoneNumber = 12312412,
+                Gmail = "trandangquang@gmail.com",
+            });
+
+            _traineeProfiles.Add(new TraineeProfile()
+            {
+                TraineeId = 2,
+                FristName = "Hung",
+                LastName = "Kim",
+                PhoneNumber = 12444555,
+                Gmail = "kimvongochung@gmail.com",
+                
+            });
+        }
         // GET: Trainees
         public ActionResult Index()
         {
-            return View(_traineeProfile);
+            return View(_traineeProfiles);
         }
     }
-}
+};

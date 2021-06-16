@@ -1,4 +1,4 @@
-﻿@model ASPDevApp.Models.TraineeProfile
+﻿@model IEnumerable<ASPDevApp.Models.TraineeProfile>
 @{
     ViewBag.Title = "Index";
 }
@@ -16,14 +16,18 @@
         </tr>
     </thead>
     <tbody>
+        @foreach ( var TraineeProfile in Model )
+        {
         <tr>
-            <th scope="row">@Model.TraineeId</th>
-            <td>@Model.Gmail</td>
-            <td>@Model.FristName</td>
+            <th scope="row">@TraineeProfile.TraineeId</th>
+            <td>@TraineeProfile.Gmail</td>
+            <td>@TraineeProfile.FristName</td>
+
             <td>
                 <a href="#" class="btn btn-info">Change Password </a>
                 <a href="#" class="btn btn-danger">Delete </a>
             </td>
         </tr>
+        }
     </tbody>
 </table>
