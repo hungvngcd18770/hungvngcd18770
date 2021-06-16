@@ -172,6 +172,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TraineesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,9 +196,9 @@
     <Compile Include="Migrations\202106140309504_DbContext.Designer.cs">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106151353459_AddTrain.cs" />
-    <Compile Include="Migrations\202106151353459_AddTrain.Designer.cs">
-      <DependentUpon>202106151353459_AddTrain.cs</DependentUpon>
+    <Compile Include="Migrations\202106160431004_AddTrain.cs" />
+    <Compile Include="Migrations\202106160431004_AddTrain.Designer.cs">
+      <DependentUpon>202106160431004_AddTrain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -276,6 +277,9 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Trainees\Index.cshtml" />
+    <Content Include="Views\Trainees\Create.cshtml" />
+    <Content Include="Views\Trainees\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -309,8 +313,8 @@
     <EmbeddedResource Include="Migrations\202106140309504_DbContext.resx">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151353459_AddTrain.resx">
-      <DependentUpon>202106151353459_AddTrain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106160431004_AddTrain.resx">
+      <DependentUpon>202106160431004_AddTrain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

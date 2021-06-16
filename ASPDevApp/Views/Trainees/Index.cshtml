@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ASPDevApp.Models.TraineeProfile>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Traniee</h2>
+
+<div class="form-group">
+    @Html.ActionLink("Create Trainee Account",
+                    "Create",
+                    "Trainees",
+                    null,
+                    new {@class= "btn btn-info"}
+                    )
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Trainee Id</th>
+            <th scope="col">Gmail</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ( var TraineeProfile in Model )
+        {
+        <tr>
+            <th scope="row">@TraineeProfile.TraineeId</th>
+            <td>@TraineeProfile.Gmail</td>
+            <td>@TraineeProfile.FristName</td>
+
+            <td>
+                
+                @Html.ActionLink("Change Password",
+                    "ChangePassword",
+                    "Trainees",
+                    new { traineeId = TraineeProfile.TraineeId },
+                    new {@class= "btn btn-info"}
+                    )
+
+                @Html.ActionLink("Delete",
+                                "Delete",
+                                "Trainees",
+                                new { traineeId = TraineeProfile.TraineeId },
+                                new {@class= "btn btn-danger"}
+                                )
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
