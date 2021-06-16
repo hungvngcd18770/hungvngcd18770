@@ -37,5 +37,9 @@ namespace ASPDevApp.Controllers
         {
             return View(_traineeProfiles);
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 };
