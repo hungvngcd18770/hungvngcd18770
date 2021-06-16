@@ -30,9 +30,27 @@ namespace ASPDevApp.Controllers
             }
             return View(courses);
         }
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Course course)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var newCourse = new Course()
+            {
+                Name = course.Name,
+                Description = course.Description,
+                CategoryId = course.CategoryId
+            };
+            _context.Courses.Add(newCourse);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {

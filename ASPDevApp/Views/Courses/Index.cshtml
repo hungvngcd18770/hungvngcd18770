@@ -13,3 +13,31 @@
         text-transform: uppercase;
     }
 </style>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Description</td>
+                <td>@data.Category.Name</td>
+                <td>
+                    @Html.ActionLink("Update Course", "Update", "Courses",
+                              new { id = data.Id },
+                              new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete this Course", "Delete", "Courses",
+                                 new { id = data.Id },
+                                 new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
