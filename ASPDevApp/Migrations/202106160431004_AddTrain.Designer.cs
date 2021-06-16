@@ -13,7 +13,7 @@ namespace ASPDevApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202106151353459_AddTrain"; }
+            get { return "202106160431004_AddTrain"; }
         }
         
         string IMigrationMetadata.Source
