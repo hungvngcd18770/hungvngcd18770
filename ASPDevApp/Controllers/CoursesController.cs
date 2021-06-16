@@ -1,4 +1,5 @@
 ﻿using ASPDevApp.Models;
+using ASPDevApp.ViewModels;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,11 @@ namespace ASPDevApp.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            var viewModel = new CourseCategoriesViewModel()
+            {
+                Categories = _context.Categories.ToList()
+            };
+            return View(viewModel);
         }
         [HttpPost]
         public ActionResult Create(Course course)
