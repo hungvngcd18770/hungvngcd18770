@@ -32,8 +32,21 @@
             <td>@TraineeProfile.FristName</td>
 
             <td>
-                <a href="#" class="btn btn-info">Change Password </a>
-                <a href="#" class="btn btn-danger">Delete </a>
+                
+                @Html.ActionLink("Change Password",
+                    "ChangePassword",
+                    "Trainees",
+                    new { traineeId = TraineeProfile.TraineeId },
+                    new {@class= "btn btn-info"}
+                    )
+
+                @Html.ActionLink("Delete",
+                                "Delete",
+                                "Trainees",
+                                new { traineeId = TraineeProfile.TraineeId },
+                                new {@class= "btn btn-danger"}
+                                )
+
             </td>
         </tr>
         }

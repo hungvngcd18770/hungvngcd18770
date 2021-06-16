@@ -31,5 +31,14 @@ namespace ASPDevApp.Controllers
         {
             return View();
         }
+        public ActionResult Delete(int? traineeId)
+        {
+            if (traineeId == null) return HttpNotFound();
+            var traineeProfile = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeId);
+            if (traineeId == null) return HttpNotFound();
+            _context.TraineeProfiles.Remove(traineeProfile);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 };
