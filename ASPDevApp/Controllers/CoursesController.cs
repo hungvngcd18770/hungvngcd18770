@@ -79,9 +79,24 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Edit()
+        public ActionResult Edit(Course course)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CourseCategoriesViewModel()
+                {
+                    Course = course,
+                    Categories = _context.Categories.ToList()
+                };
+                return View(viewModel);
+            }
+            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == course.Id);
+
+            courseInDb.Name = course.Name;
+            courseInDb.Description = course.Description;
+            courseInDb.CategoryId = course.CategoryId;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
