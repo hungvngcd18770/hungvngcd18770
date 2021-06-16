@@ -18,9 +18,11 @@ namespace ASPDevApp.Models
         [DisplayName("Trainee Last Name")]
         public string LastName { get; set; }
         [DisplayName("Trainee Phone Number")]
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         [DisplayName("Trainee Date Of Birth")]
-        public string DateOfBirth { get; set; }
+        public int DateOfBirth { get; set; }
+        [DisplayName("Trainee Gmail")]
+        public string Gmail { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

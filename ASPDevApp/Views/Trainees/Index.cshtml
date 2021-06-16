@@ -1,0 +1,29 @@
+﻿@model ASPDevApp.Models.TraineeProfile
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Traniee</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Trainee Id</th>
+            <th scope="col">Gmail</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Model.TraineeId</th>
+            <td>@Model.Gmail</td>
+            <td>@Model.FristName</td>
+            <td>
+                <a href="#" class="btn btn-info">Change Password </a>
+                <a href="#" class="btn btn-danger">Delete </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
