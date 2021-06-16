@@ -41,5 +41,9 @@ namespace ASPDevApp.Controllers
         {
             return View();
         }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
     }
 };
