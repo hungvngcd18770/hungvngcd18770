@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ASPDevApp.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace ASPDevApp.Controllers
 {
@@ -18,10 +19,16 @@ namespace ASPDevApp.Controllers
            
         }
         // GET: Trainees
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var TraineeProfiles = _context.TraineeProfiles.ToList();
-            return View(TraineeProfiles);
+            var profile = _context.TraineeProfiles.ToList();
+            if (!searchString.IsNullOrWhiteSpace())
+            {
+                profile = _context.TraineeProfiles
+                    .Where(t => t.Name.Contains(searchString))
+                    .ToList();
+            }
+            return View(profile);
         }
         public ActionResult Create()
         {
