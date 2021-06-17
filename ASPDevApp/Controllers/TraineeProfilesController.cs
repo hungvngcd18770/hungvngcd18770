@@ -7,12 +7,12 @@ using ASPDevApp.Models;
 
 namespace ASPDevApp.Controllers
 {
-    public class TraineesController : Controller
+    public class TraineeProfilesController : Controller
     {
         private ApplicationDbContext _context;
          
         
-        public TraineesController()
+        public TraineeProfilesController()
         {
             _context = new ApplicationDbContext();
            

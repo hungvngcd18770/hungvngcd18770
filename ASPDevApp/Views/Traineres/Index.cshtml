@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ASPDevApp.Models.TrainerProfile>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Create new Profile", "Create", "TrainerProfiles",
+        null,
+        new { @class = "btn btn-primary" })
+@using (Html.BeginForm("Index", "TrainerProfiles", "POST"))
+{
+    <div class="form-group">
+        <label for="fname">Search by Task Name:</label><br>
+        @Html.TextBox("searchString", null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Education</th>
+            <th>Working Place</th>
+            <th>Telephone</th>
+            <th>Email Address</th>
+            <th>Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Education</td>
+                <td>@item.WorkingPlace</td>
+                <td>@item.Telephone</td>
+                <td>@item.Email</td>
+                <td>@item.Type</td>
+                <td>
+                    @Html.ActionLink("Update Course", "Update", "TrainerProfiles",
+                              new { id = item.Id },
+                              new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete this Profile", "Delete", "TrainerProfiles",
+                                 new { id = item.Id },
+                                 new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

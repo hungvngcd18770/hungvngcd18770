@@ -172,7 +172,8 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TraineesController.cs" />
+    <Compile Include="Controllers\TraineeProfilesController.cs" />
+    <Compile Include="Controllers\TrainerProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,9 +197,9 @@
     <Compile Include="Migrations\202106140309504_DbContext.Designer.cs">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106161436491_AddModle.cs" />
-    <Compile Include="Migrations\202106161436491_AddModle.Designer.cs">
-      <DependentUpon>202106161436491_AddModle.cs</DependentUpon>
+    <Compile Include="Migrations\202106170343531_AddTrainer.cs" />
+    <Compile Include="Migrations\202106170343531_AddTrainer.Designer.cs">
+      <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -280,6 +281,9 @@
     <Content Include="Views\Trainees\Index.cshtml" />
     <Content Include="Views\Trainees\Create.cshtml" />
     <Content Include="Views\Trainees\ChangePassword.cshtml" />
+    <Content Include="Views\Traineres\Index.cshtml" />
+    <Content Include="Views\Traineres\Create.cshtml" />
+    <Content Include="Views\Traineres\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,8 +317,8 @@
     <EmbeddedResource Include="Migrations\202106140309504_DbContext.resx">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106161436491_AddModle.resx">
-      <DependentUpon>202106161436491_AddModle.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106170343531_AddTrainer.resx">
+      <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
