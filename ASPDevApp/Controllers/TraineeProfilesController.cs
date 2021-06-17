@@ -60,7 +60,7 @@ namespace ASPDevApp.Controllers
          }
          public ActionResult Delete(int id)
          {
-             var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.Id == id);
+            var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == id);
 
              if (profileInDb == null) return HttpNotFound();
 
@@ -82,7 +82,7 @@ namespace ASPDevApp.Controllers
              {
                  return View();
              }
-            var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.Id == traineeProfile.Id);
+            var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeProfile.TraineeId);
              profileInDb.Name = traineeProfile.Name;
              profileInDb.Age = traineeProfile.Age;
              profileInDb.Education = traineeProfile.Education;
@@ -92,15 +92,7 @@ namespace ASPDevApp.Controllers
 
              _context.SaveChanges();
              return RedirectToAction("Index");
-         }
-        public ActionResult Delete(int? traineeId)
-        {
-            if (traineeId == null) return HttpNotFound();
-            var traineeProfile = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeId);
-            if (traineeId == null) return HttpNotFound();
-            _context.TraineeProfiles.Remove(traineeProfile);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+         
         }
     }
 };
