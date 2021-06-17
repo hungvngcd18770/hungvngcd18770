@@ -38,6 +38,6 @@ namespace ASPDevApp.Models
         public int? CourseId { get; set; }
         public Course Course { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-
+        public object Id { get; internal set; }
     }
 }
