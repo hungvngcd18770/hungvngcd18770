@@ -29,9 +29,33 @@ namespace ASPDevApp.Controllers
             }
             return View(profile);
         }
+        [HttpGet]
         public ActionResult Create()
         {
+
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(TrainerProfile trainerProfile)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var newTrainerProfile = new TrainerProfile();
+
+
+            newTrainerProfile.Name = trainerProfile.Name;
+            newTrainerProfile.Education = trainerProfile.Education;
+            newTrainerProfile.WorkingPlace = trainerProfile.WorkingPlace;
+            newTrainerProfile.Telephone = trainerProfile.Telephone;
+            newTrainerProfile.Email = trainerProfile.Email;
+            newTrainerProfile.Type = trainerProfile.Type;
+
+            _context.TrainerProfiles.Add(newTrainerProfile);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
         public ActionResult Edit()
         {
