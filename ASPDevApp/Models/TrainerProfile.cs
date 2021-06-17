@@ -47,5 +47,6 @@ namespace ASPDevApp.Models
         public int? CourseId { get; set; }
         public Course Course { get; set; }
         public int Id { get; internal set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
