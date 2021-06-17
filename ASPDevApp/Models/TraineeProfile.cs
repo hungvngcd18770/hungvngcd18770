@@ -11,7 +11,7 @@ namespace ASPDevApp.Models
 {
     public class TraineeProfile
     {
-        [ForeignKey("ApplicationUser")]
+        //[ForeignKey("ApplicationUser")]
         [Key]
         public string TraineeId { get; set; }
         [Required(ErrorMessage = "Name should not be Empty !!!")]

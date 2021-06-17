@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +11,7 @@ namespace ASPDevApp.Models
 {
     public class TrainerProfile
     {
-        [Foreingnkey("User")]
+        [ForeignKey("ApplicationUser")]
         [Key]
         public string TrainerId { get; set; }
         [Required(ErrorMessage = "Name should not be Empty !!!")]

@@ -17,10 +17,5 @@ namespace ASPDevApp.Models
             return userIdentity;
         }
 
-
-        public ApplicationUser()
-        {
-
-        }
     }
 }
