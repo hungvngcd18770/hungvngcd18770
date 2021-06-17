@@ -12,25 +12,39 @@ namespace ASPDevApp.Models
     {
         [Foreingnkey("User")]
         [Key]
-        public string TrainerId {get;set;}
-        public ApplicationUser User { get; set; }
-        [Required]
-        [DisplayName("Trainer First Name")]
-        public string FirstName { get; set; }
-        [Required]
-        [DisplayName("Trainer Last Name")]
-        public string LastName { get; set; }
-        [Required]
-        [DisplayName("Trainer Date Of Birth")]
-        public int DateOfBirth { get; set; }
-        [Required]
-        [DisplayName("Trainer Gmail")]
-        public string Gmail { get; set; }
-        [Required]
-        [DisplayName("Trainer Phone Number")]
-        public int PhoneNumber { get; set; }
+        public string TrainerId { get; set; }
+        [Required(ErrorMessage = "Name should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Trainer Name")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "Education should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Trainer Education")]
+        public string Education { get; set; }
+        [Required(ErrorMessage = "Working Place should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Working Place")]
+        public string WorkingPlace { get; set; }
+
+        [Required(ErrorMessage = "Telephone should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Telephone")]
+        public string Telephone { get; set; }
+        [Required(ErrorMessage = "Email Address should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Email Address")]
+        public string Email { get; set; }
+
+        public enum TypeTrainer
+        {
+            External = 1,
+            Internal = 2
+        }
+        [Required(ErrorMessage = "Type should not be Empty !!!")]
+
+        [DisplayName("Email Address")]
+        public TypeTrainer Type { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
