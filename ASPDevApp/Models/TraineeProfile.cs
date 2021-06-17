@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,19 +11,30 @@ namespace ASPDevApp.Models
 {
     public class TraineeProfile
     {
-        [Foreingnkey("User")]
+        [ForeignKey("ApplicationUser")]
         [Key]
-        public int TraineeId { get; set; }
-        [DisplayName("Trainee First Name")]
-        public string FristName { get; set; }
-        [DisplayName("Trainee Last Name")]
-        public string LastName { get; set; }
-        [DisplayName("Trainee Phone Number")]
-        public int PhoneNumber { get; set; }
-        [DisplayName("Trainee Date Of Birth")]
-        public int DateOfBirth { get; set; }
-        [DisplayName("Trainee Gmail")]
-        public string Gmail { get; set; }
+        public string TraineeId { get; set; }
+        [Required(ErrorMessage = "Name should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Trainee Name")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "Education should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Trainee Education")]
+        public string Education { get; set; }
+        [Required(ErrorMessage = "Age should not be Empty !!!")]
+        [DisplayName("Trainee Age")]
+        public int Age { get; set; }
+        [Required(ErrorMessage = "Date of birth should not be Empty !!!")]
+        [DisplayName("Date of Birth")]
+        public DateTime Birthday { get; set; }
+        [Required(ErrorMessage = "Primary Programing Language should not be Empty !!!")]
+        [StringLength(255)]
+        [DisplayName("Primary Programing Language")]
+        public string ProgramingLanguage { get; set; }
+        [Required(ErrorMessage = "TOEIC score should not be Empty !!!")]
+        [DisplayName("TOEIC Score")]
+        public int Toeic { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
