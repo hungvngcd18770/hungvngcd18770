@@ -30,10 +30,44 @@ namespace ASPDevApp.Controllers
             }
             return View(profile);
         }
-        public ActionResult Create()
-        {
-            return View();
-        }
+        [HttpGet]
+         public ActionResult Create()
+         {
+
+             return View();
+         }
+
+         [HttpPost]
+         public ActionResult Create(TraineeProfile traineeProfile)
+         {
+             if (!ModelState.IsValid)
+             {
+                 return View();
+             }
+             var newTraineeProfile = new TraineeProfile();
+
+
+             newTraineeProfile.Name = traineeProfile.Name;
+             newTraineeProfile.Age = traineeProfile.Age;
+             newTraineeProfile.Education = traineeProfile.Education;
+             newTraineeProfile.Birthday = traineeProfile.Birthday;
+             newTraineeProfile.ProgramingLanguage = traineeProfile.ProgramingLanguage;
+             newTraineeProfile.Toeic = traineeProfile.Toeic;
+
+             _context.TraineeProfiles.Add(newTraineeProfile);
+             _context.SaveChanges();
+             return RedirectToAction("Index");
+         }
+         public ActionResult Delete(int id)
+         {
+             var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.Id == id);
+
+             if (profileInDb == null) return HttpNotFound();
+
+             _context.TraineeProfiles.Remove(profileInDb);
+             _context.SaveChanges();
+             return RedirectToAction("Index");
+         }
         [HttpGet]
          public ActionResult ChangePassword(int id)
          {
