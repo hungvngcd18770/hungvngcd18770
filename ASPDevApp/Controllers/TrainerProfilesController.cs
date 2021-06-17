@@ -57,10 +57,26 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Edit()
-        {
-            return View();
-        }
+        [HttpPost]
+         public ActionResult Edit(TrainerProfile trainerProfile)
+         {
+             if (!ModelState.IsValid)
+             {
+                 return View();
+             }
+             var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.Id == trainerProfile.Id);
+
+             profileInDb.Name = trainerProfile.Name;
+             profileInDb.Education = trainerProfile.Education;
+             profileInDb.WorkingPlace = trainerProfile.WorkingPlace;
+             profileInDb.Telephone = trainerProfile.Telephone;
+             profileInDb.Email = trainerProfile.Email;
+             profileInDb.Type = trainerProfile.Type;
+
+
+             _context.SaveChanges();
+             return RedirectToAction("Index");
+         }
         public ActionResult Delete(int id)
         {
             var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.Id == id);

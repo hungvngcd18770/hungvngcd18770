@@ -1,7 +1,39 @@
-﻿
+﻿@model ASPDevApp.Models.TrainerProfile
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
 
+@using (Html.BeginForm("Edit", "TrainerProfiles", "POST"))
+{
+    <div class="form-group">
+        @Html.HiddenFor(model => model.Id)
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Education)
+        @Html.TextBoxFor(model => model.Education, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.WorkingPlace)
+        @Html.TextBoxFor(model => model.WorkingPlace, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.WorkingPlace, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telephone)
+        @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </div>
+}
