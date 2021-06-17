@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace ASPDevApp.Controllers
 {
     public class TrainerProfilesController : Controller
@@ -35,6 +36,16 @@ namespace ASPDevApp.Controllers
         public ActionResult Edit()
         {
             return View();
+        }
+        public ActionResult Delete(int id)
+        {
+            var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.Id == id);
+
+            if (profileInDb == null) return HttpNotFound();
+
+            _context.TrainerProfiles.Remove(profileInDb);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

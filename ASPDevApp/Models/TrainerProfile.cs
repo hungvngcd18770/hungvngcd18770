@@ -46,5 +46,6 @@ namespace ASPDevApp.Models
         public TypeTrainer Type { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
+        public int Id { get; internal set; }
     }
 }
