@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202106170343531_AddTrainer.Designer.cs">
       <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106180558106_adddnewww.cs" />
+    <Compile Include="Migrations\202106180558106_adddnewww.Designer.cs">
+      <DependentUpon>202106180558106_adddnewww.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -278,12 +282,12 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
-    <Content Include="Views\Trainees\Index.cshtml" />
-    <Content Include="Views\Trainees\Create.cshtml" />
-    <Content Include="Views\Trainees\ChangePassword.cshtml" />
-    <Content Include="Views\Traineres\Index.cshtml" />
-    <Content Include="Views\Traineres\Create.cshtml" />
-    <Content Include="Views\Traineres\Edit.cshtml" />
+    <Content Include="Views\TraineeProfiles\Index.cshtml" />
+    <Content Include="Views\TraineeProfiles\Create.cshtml" />
+    <Content Include="Views\TraineeProfiles\ChangePassword.cshtml" />
+    <Content Include="Views\TrainerProfiles\Index.cshtml" />
+    <Content Include="Views\TrainerProfiles\Create.cshtml" />
+    <Content Include="Views\TrainerProfiles\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106170343531_AddTrainer.resx">
       <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106180558106_adddnewww.resx">
+      <DependentUpon>202106180558106_adddnewww.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

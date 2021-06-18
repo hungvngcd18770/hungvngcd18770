@@ -64,7 +64,7 @@ namespace ASPDevApp.Controllers
              {
                  return View();
              }
-             var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.Id == trainerProfile.Id);
+             var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerProfile.TrainerId);
 
              profileInDb.Name = trainerProfile.Name;
              profileInDb.Education = trainerProfile.Education;
@@ -77,9 +77,9 @@ namespace ASPDevApp.Controllers
              _context.SaveChanges();
              return RedirectToAction("Index");
          }
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string trainerId)
         {
-            var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.Id == id);
+            var profileInDb = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerId);
 
             if (profileInDb == null) return HttpNotFound();
 

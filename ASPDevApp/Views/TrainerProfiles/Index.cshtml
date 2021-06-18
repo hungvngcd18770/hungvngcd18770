@@ -1,17 +1,17 @@
-﻿@model IEnumerable<ASPDevApp.Models.TraineeProfile>
+﻿@model IEnumerable<ASPDevApp.Models.TrainerProfile>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index Trainee</h2>
+<h2>Index</h2>
 
-@Html.ActionLink("Create new Profile", "Create", "TraineeProfiles",
+@Html.ActionLink("Create new Profile", "Create", "TrainerProfiles",
         null,
         new { @class = "btn btn-primary" })
-@using (Html.BeginForm("Index", "TraineeProfiles", "POST"))
+@using (Html.BeginForm("Index", "TrainerProfiles", "POST"))
 {
     <div class="form-group">
-        <label for="fname">Search:</label><br>
+        <label for="fname">Search by Task Name:</label><br>
         @Html.TextBox("searchString", null, new { @class = "form-control" })
     </div>
     <div class="form-group">
@@ -24,11 +24,11 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Age</th>
             <th>Education</th>
-            <th>Date of birth</th>
-            <th>Primary program Language</th>
-            <th>TOEIC score</th>
+            <th>Working Place</th>
+            <th>Telephone</th>
+            <th>Email Address</th>
+            <th>Type</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -37,17 +37,17 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>@item.Age</td>
                 <td>@item.Education</td>
-                <td>@item.Birthday</td>
-                <td>@item.ProgramingLanguage</td>
-                <td>@item.Toeic</td>
+                <td>@item.WorkingPlace</td>
+                <td>@item.Telephone</td>
+                <td>@item.Email</td>
+                <td>@item.Type</td>
                 <td>
-                    @Html.ActionLink("ChangePassword", "ChangePassword", "TraineeProfiles",
-                              new { id = item.Id },
+                    @Html.ActionLink("Update Course", "Edit", "TrainerProfiles",
+                              new { id = item.TrainerId },
                               new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Delete", "Delete", "TraineeProfiles",
-                                 new { id = item.Id },
+                    @Html.ActionLink("Delete this Profile", "Delete", "TrainerProfiles",
+                                 new { id = item.TrainerId },
                                  new { @class = "btn btn-danger" })
                 </td>
             </tr>

@@ -58,9 +58,9 @@ namespace ASPDevApp.Controllers
              _context.SaveChanges();
              return RedirectToAction("Index");
          }
-         public ActionResult Delete(int id)
+         public ActionResult Delete(string traineeId)
          {
-            var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == id);
+            var profileInDb = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeId);
 
              if (profileInDb == null) return HttpNotFound();
 
