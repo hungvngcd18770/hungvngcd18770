@@ -1,7 +1,46 @@
-﻿
+﻿@model ASPDevApp.ViewModel.ListTraineeCoursesViewModel
 @{
     ViewBag.Title = "DecentralizationTrainee";
 }
 
 <h2>DecentralizationTrainee</h2>
 
+<table class="table table-bordered">
+    <thread>
+        <tr>
+            <th>Name</th>
+            <th>Education</th>
+            <th>Age</th>
+            <th>Birthday</th>
+            <th>Programing Language</th>
+            <th>Toeic</th>
+            <th>Action</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var item in Model.TraineeProfiles)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Education</td>
+                <td>@item.Age</td>
+                <td>@item.Birthday</td>
+                <td>@item.ProgramingLanguage</td>
+                <td>@item.Toeic</td>
+                <td>
+                    @using (Html.BeginForm("DecentralizationTrainee", "DecentralizationTrainee", "POST"))
+                    {
+                        <div>
+                            <input type="hidden" name="courseId" value="@Model.Course.Id">
+                            <input type="hidden" name="traineeId" value="@item.TraineeId">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
