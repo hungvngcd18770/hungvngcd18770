@@ -50,7 +50,7 @@ namespace ASPDevApp.Controllers
             return RedirectToAction("Index/", new { id = courseId });
         }
         [HttpGet]
-        public ActionResult ChangeTrainee()
+        public ActionResult ChangeTrainee(string courseId, string traineeId)
         {
             int CourseId = Convert.ToInt32(courseId);
             var traineeProfile = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeId);

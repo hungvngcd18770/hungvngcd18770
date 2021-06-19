@@ -295,6 +295,7 @@
     <Content Include="Views\TrainerProfiles\Edit.cshtml" />
     <Content Include="Views\DecentralizationTrainee\Index.cshtml" />
     <Content Include="Views\DecentralizationTrainee\DecentralizationTrainee.cshtml" />
+    <Content Include="Views\DecentralizationTrainee\ChangeTrainee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
