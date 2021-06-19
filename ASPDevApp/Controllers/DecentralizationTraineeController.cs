@@ -52,7 +52,11 @@ namespace ASPDevApp.Controllers
         [HttpGet]
         public ActionResult ChangeTrainee()
         {
-            return View();
+            int CourseId = Convert.ToInt32(courseId);
+            var traineeProfile = _context.TraineeProfiles.SingleOrDefault(t => t.TraineeId == traineeId);
+            traineeProfile.CourseId = CourseId;
+            _context.SaveChanges();
+            return RedirectToAction("Index/", new { Id = CourseId });
         }
         [HttpPost]
         public ActionResult DeleteTrainee(string courseId, string traineeId)
