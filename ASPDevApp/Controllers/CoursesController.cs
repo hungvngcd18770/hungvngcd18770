@@ -1,11 +1,8 @@
 ﻿using ASPDevApp.Models;
-using ASPDevApp.ViewModels;
+using ASPDevApp.ViewModel;
 using Microsoft.Ajax.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ASPDevApp.Controllers
