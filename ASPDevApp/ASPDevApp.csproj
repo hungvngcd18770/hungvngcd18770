@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DecentralizationTraineeController.cs" />
+    <Compile Include="Controllers\DecentralizationTrainerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TraineeProfilesController.cs" />
@@ -296,6 +297,7 @@
     <Content Include="Views\DecentralizationTrainee\Index.cshtml" />
     <Content Include="Views\DecentralizationTrainee\DecentralizationTrainee.cshtml" />
     <Content Include="Views\DecentralizationTrainee\ChangeTrainee.cshtml" />
+    <Content Include="Views\DecentralizationTrainer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
