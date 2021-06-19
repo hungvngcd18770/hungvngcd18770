@@ -26,6 +26,58 @@ namespace ASPDevApp.Controllers
             };
             return View(trainerList);
         }
+        [HttpGet]
+        public ActionResult DecentralizationTrainer(int id)
+        {
+            var trainerNotInCourse = _context.TrainerProfiles.Where(c => c.CourseId == null).ToList();
+            var trainerList = new ListTrainerCoursesViewModel
+            {   
+                TrainerProfiles = trainerNotInCourse,
+                Course = _context.Courses.SingleOrDefault(c => c.Id == id)
+            };
+            return View(trainerList);
+        }
+        [HttpPost]
+        public ActionResult AssignTrainerForCourse(string courseId, string trainerId)
+        {
+            int CourseId = Convert.ToInt32(courseId);
+            var trainer = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerId);
+            trainer.CourseId = CourseId;
+            _context.SaveChanges();
+            return RedirectToAction("Index/", new { id = courseId });
+        }
 
+        [HttpGet]
+        public ActionResult ChangeTrainer(int courseId, string trainerId)
+        {
+            var trainerChange = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerId);
+            var CoursesExclude = _context.Courses.Where(c => c.Id != courseId);
+            var changeTrainer = new ChangeTrainersViewModel()
+            {
+                Courses = CoursesExclude,
+                TrainerProfile = trainerChange,
+            };
+            return View(changeTrainer);
+        }
+
+        [HttpPost]
+        public ActionResult ChangeTrainer(string courseId, string trainerId)
+        {
+            int CourseId = Convert.ToInt32(courseId);
+            var trainerProfile = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerId);
+            trainerProfile.CourseId = CourseId;
+            _context.SaveChanges();
+            return RedirectToAction("Index/", new { Id = CourseId });
+        }
+
+        [HttpPost]
+        public ActionResult DeleteTrainer(string courseId, string trainerId)
+        {
+            int CourseId = Convert.ToInt32(courseId);
+            var trainer = _context.TrainerProfiles.SingleOrDefault(t => t.TrainerId == trainerId);
+            trainer.CourseId = null;
+            _context.SaveChanges();
+            return RedirectToAction("Index/" + courseId);
+        }
     }
 }

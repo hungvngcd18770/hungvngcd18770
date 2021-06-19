@@ -1,0 +1,45 @@
+﻿@model ASPDevApp.ViewModel.ListTrainerCoursesViewModel
+@{
+    ViewBag.Title = "DecentralizationTrainerController";
+}
+
+<h2>List Trainer not in Course</h2>
+<table class="table table-bordered">
+    <thread>
+        <tr>
+            <th>Name</th>
+            <th>Education</th>
+            <th>Working Place</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>Action</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var item in Model.TrainerProfiles)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Education</td>
+                <td>@item.WorkingPlace</td>
+                <td>@item.Telephone</td>
+                <td>@item.Email</td>
+                <td>@item.Type</td>
+                <td>
+                    @using (Html.BeginForm("DecentralizationTrainerController", "DecentralizationTrainerController", "POST"))
+                    {
+                        <div>
+                            <input type="hidden" name="courseId" value="@Model.Course.Id">
+                            <input type="hidden" name="trainerId" value="@item.TrainerId">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

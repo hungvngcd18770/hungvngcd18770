@@ -298,6 +298,7 @@
     <Content Include="Views\DecentralizationTrainee\DecentralizationTrainee.cshtml" />
     <Content Include="Views\DecentralizationTrainee\ChangeTrainee.cshtml" />
     <Content Include="Views\DecentralizationTrainer\Index.cshtml" />
+    <Content Include="Views\DecentralizationTrainer\DecentralizationTrainer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
