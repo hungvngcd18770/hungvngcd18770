@@ -1,7 +1,52 @@
-﻿
+﻿@model ASPDevApp.ViewModel.ListTrainerCoursesViewModel 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
+<h2>Course Name: @Model.Course.Name</h2>
+@Html.ActionLink("Assign Trainer to Course", "AssignTrainerForCourse", "AssignTrainerCourses",
+                                          new { id = Model.Course.Id },
+                                          new { @class = "btn btn-danger" })
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        @foreach (var item in Model.TrainerProfiles)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Course.Name</td>
+                <td>
+                    @using (Html.BeginForm("DeleteTrainer", "AssignTrainerCourses", "POST"))
+                    {
+                        <div>
+                            <input type="hidden" name="courseId" value="@Model.Course.Id">
+                            <input type="hidden" name="trainerId" value="@item.TrainerId">
+                        </div>
+                        <div>
+                            <button class="btn btn-success">Remove Trainer From Course</button>
+                        </div>
+                    }
+                    @Html.ActionLink("Change Trainer", "ChangeTrainer", "AssignTrainerCourses",
+                                     new
+                                          {
+                                          CourseId = Model.Course.Id,
+                                          TrainerId = item.TrainerId
+                                          },
+                                     new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 

@@ -1,4 +1,5 @@
 ﻿using ASPDevApp.Models;
+using ASPDevApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,16 @@ namespace ASPDevApp.Controllers
             _context = new ApplicationDbContext();
         }
         // GET: DecentralizationTrainer
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            var trainerInCourse = _context.TrainerProfiles.Where(c => c.CourseId == id).ToList();
+            var trainerList = new ListTrainerCoursesViewModel
+            {
+                TrainerProfiles = trainerInCourse,
+                Course = _context.Courses.SingleOrDefault(c => c.Id == id)
+            };
+            return View(trainerList);
         }
+
     }
 }
