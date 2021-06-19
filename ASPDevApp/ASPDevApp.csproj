@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\DecentralizationTraineeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TraineeProfilesController.cs" />
@@ -217,7 +218,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\CourseCategoriesViewModel.cs" />
+    <Compile Include="ViewModel\CourseCategoriesViewModel.cs" />
+    <Compile Include="ViewModel\ListTraineeCoursesViewModel.cs" />
+    <Compile Include="ViewModel\ListTrainerCoursesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -288,6 +291,8 @@
     <Content Include="Views\TrainerProfiles\Index.cshtml" />
     <Content Include="Views\TrainerProfiles\Create.cshtml" />
     <Content Include="Views\TrainerProfiles\Edit.cshtml" />
+    <Content Include="Views\DecentralizationTrainee\Index.cshtml" />
+    <Content Include="Views\DecentralizationTrainee\DecentralizationTrainee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
