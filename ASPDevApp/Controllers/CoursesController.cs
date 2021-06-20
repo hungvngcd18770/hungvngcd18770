@@ -19,10 +19,7 @@ namespace ASPDevApp.Controllers
         }
         public ActionResult Index(string searchString)
         {
-            var userId = User.Identity.GetUserId();
-            var courses = _context.Courses
-                .Include(t => t.Category)
-                .ToList();//.Where(t => t.UserId.Equals(userId))
+            var courses = _context.Courses.Include(t => t.Category).ToList();
 
             if (!searchString.IsNullOrWhiteSpace())
             {
@@ -42,15 +39,14 @@ namespace ASPDevApp.Controllers
             };
             return View(viewModel);
         }
+
         [HttpPost]
         public ActionResult Create(Course course)
         {
-            
             if (!ModelState.IsValid)
             {
                 return View();
             }
-            var userId = User.Identity.GetUserId();
             var newCourse = new Course()
             {
                 Name = course.Name,
@@ -61,10 +57,10 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        //kkk
         public ActionResult Delete(int id)
         {
-            var userId = User.Identity.GetUserId();
-            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == id);
+            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == id);//.Where(t => t.UserId.Equals(userId))
 
             if (courseInDb == null) return HttpNotFound();
             var trainer = _context.TrainerProfiles.Where(t => t.CourseId == id);
@@ -87,11 +83,9 @@ namespace ASPDevApp.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            
             var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == id);
-            if (courseInDb == null) return HttpNotFound();
-
             var userId = User.Identity.GetUserId();
+            if (courseInDb == null) return HttpNotFound();
 
             var viewModel = new CourseCategoriesViewModel()
             {
@@ -114,10 +108,7 @@ namespace ASPDevApp.Controllers
                 return View(viewModel);
             }
             var userId = User.Identity.GetUserId();
-            var courseInDb = _context.Courses
-                
-                .SingleOrDefault(t => t.Id == course.Id);//.Where(t => t.UserId.Equals(userId))
-
+            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == course.Id);//.Where(t => t.UserId.Equals(userId))
             courseInDb.Name = course.Name;
             courseInDb.Description = course.Description;
             courseInDb.CategoryId = course.CategoryId;
