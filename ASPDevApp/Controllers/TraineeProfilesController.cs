@@ -8,6 +8,7 @@ using Microsoft.Ajax.Utilities;
 
 namespace ASPDevApp.Controllers
 {
+    [Authorize]
     public class TraineeProfilesController : Controller
     {
         private ApplicationDbContext _context;
