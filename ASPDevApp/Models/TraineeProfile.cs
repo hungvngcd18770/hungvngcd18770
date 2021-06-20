@@ -11,7 +11,7 @@ namespace ASPDevApp.Models
 {
     public class TraineeProfile
     {
-        //[ForeignKey("ApplicationUser")]
+        
         [Key]
         public string TraineeId { get; set; }
         [Required(ErrorMessage = "Name should not be Empty !!!")]
@@ -37,7 +37,8 @@ namespace ASPDevApp.Models
         public int Toeic { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        [ForeignKey("TraineeId")]
+        public  ApplicationUser ApplicationUser { get; set; }
         
     }
 }

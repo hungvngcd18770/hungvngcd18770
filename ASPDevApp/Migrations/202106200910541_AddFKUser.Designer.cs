@@ -7,13 +7,13 @@ namespace ASPDevApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddTrainer : IMigrationMetadata
+    public sealed partial class AddFKUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTrainer));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFKUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106170343531_AddTrainer"; }
+            get { return "202106200910541_AddFKUser"; }
         }
         
         string IMigrationMetadata.Source

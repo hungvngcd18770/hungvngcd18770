@@ -11,7 +11,7 @@ namespace ASPDevApp.Models
 {
     public class TrainerProfile
     {
-        [ForeignKey("ApplicationUser")]
+        
         [Key]
         public string TrainerId { get; set; }
         [Required(ErrorMessage = "Name should not be Empty !!!")]
@@ -47,7 +47,7 @@ namespace ASPDevApp.Models
         public TypeTrainer Type { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        //public int Id { get; internal set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        [ForeignKey("TrainerId")]
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

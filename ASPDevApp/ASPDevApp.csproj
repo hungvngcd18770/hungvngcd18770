@@ -199,13 +199,17 @@
     <Compile Include="Migrations\202106140309504_DbContext.Designer.cs">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106170343531_AddTrainer.cs" />
-    <Compile Include="Migrations\202106170343531_AddTrainer.Designer.cs">
-      <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
+    <Compile Include="Migrations\202106191537054_adddnew.cs" />
+    <Compile Include="Migrations\202106191537054_adddnew.Designer.cs">
+      <DependentUpon>202106191537054_adddnew.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106180558106_adddnewww.cs" />
-    <Compile Include="Migrations\202106180558106_adddnewww.Designer.cs">
-      <DependentUpon>202106180558106_adddnewww.cs</DependentUpon>
+    <Compile Include="Migrations\202106191735026_Addlancuoi.cs" />
+    <Compile Include="Migrations\202106191735026_Addlancuoi.Designer.cs">
+      <DependentUpon>202106191735026_Addlancuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106200910541_AddFKUser.cs" />
+    <Compile Include="Migrations\202106200910541_AddFKUser.Designer.cs">
+      <DependentUpon>202106200910541_AddFKUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -217,6 +221,8 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserTrainee.cs" />
+    <Compile Include="Models\UserTrainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\ChangeTraineesViewModel.cs" />
@@ -333,11 +339,14 @@
     <EmbeddedResource Include="Migrations\202106140309504_DbContext.resx">
       <DependentUpon>202106140309504_DbContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106170343531_AddTrainer.resx">
-      <DependentUpon>202106170343531_AddTrainer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106191537054_adddnew.resx">
+      <DependentUpon>202106191537054_adddnew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106180558106_adddnewww.resx">
-      <DependentUpon>202106180558106_adddnewww.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106191735026_Addlancuoi.resx">
+      <DependentUpon>202106191735026_Addlancuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106200910541_AddFKUser.resx">
+      <DependentUpon>202106200910541_AddFKUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
