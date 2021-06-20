@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TraineeProfilesController.cs" />
     <Compile Include="Controllers\TrainerProfilesController.cs" />
+    <Compile Include="Controllers\UserInfosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,9 +208,9 @@
     <Compile Include="Migrations\202106191735026_Addlancuoi.Designer.cs">
       <DependentUpon>202106191735026_Addlancuoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106200910541_AddFKUser.cs" />
-    <Compile Include="Migrations\202106200910541_AddFKUser.Designer.cs">
-      <DependentUpon>202106200910541_AddFKUser.cs</DependentUpon>
+    <Compile Include="Migrations\202106201256499_addUserInfo.cs" />
+    <Compile Include="Migrations\202106201256499_addUserInfo.Designer.cs">
+      <DependentUpon>202106201256499_addUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -221,8 +222,7 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\UserTrainee.cs" />
-    <Compile Include="Models\UserTrainer.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\ChangeTraineesViewModel.cs" />
@@ -306,6 +306,8 @@
     <Content Include="Views\DecentralizationTrainer\Index.cshtml" />
     <Content Include="Views\DecentralizationTrainer\DecentralizationTrainer.cshtml" />
     <Content Include="Views\DecentralizationTrainer\ChangeTrainer.cshtml" />
+    <Content Include="Views\UserInfos\Edit.cshtml" />
+    <Content Include="Views\UserInfos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,8 +347,8 @@
     <EmbeddedResource Include="Migrations\202106191735026_Addlancuoi.resx">
       <DependentUpon>202106191735026_Addlancuoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106200910541_AddFKUser.resx">
-      <DependentUpon>202106200910541_AddFKUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106201256499_addUserInfo.resx">
+      <DependentUpon>202106201256499_addUserInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

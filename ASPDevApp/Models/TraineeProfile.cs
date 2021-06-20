@@ -37,8 +37,9 @@ namespace ASPDevApp.Models
         public int Toeic { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        [ForeignKey("TraineeId")]
-        public  ApplicationUser ApplicationUser { get; set; }
-        
+      
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+
     }
 }

@@ -1,12 +1,14 @@
 ﻿using ASPDevApp.Models;
 using ASPDevApp.ViewModel;
 using Microsoft.Ajax.Utilities;
+using Microsoft.AspNet.Identity;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace ASPDevApp.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
 
@@ -17,7 +19,10 @@ namespace ASPDevApp.Controllers
         }
         public ActionResult Index(string searchString)
         {
-            var courses = _context.Courses.Include(t => t.Category).ToList();
+            var userId = User.Identity.GetUserId();
+            var courses = _context.Courses
+                .Include(t => t.Category)
+                .ToList();//.Where(t => t.UserId.Equals(userId))
 
             if (!searchString.IsNullOrWhiteSpace())
             {
@@ -40,10 +45,12 @@ namespace ASPDevApp.Controllers
         [HttpPost]
         public ActionResult Create(Course course)
         {
+            
             if (!ModelState.IsValid)
             {
                 return View();
             }
+            var userId = User.Identity.GetUserId();
             var newCourse = new Course()
             {
                 Name = course.Name,
@@ -56,6 +63,7 @@ namespace ASPDevApp.Controllers
         }
         public ActionResult Delete(int id)
         {
+            var userId = User.Identity.GetUserId();
             var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == id);
 
             if (courseInDb == null) return HttpNotFound();
@@ -76,6 +84,24 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            
+            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == id);
+            if (courseInDb == null) return HttpNotFound();
+
+            var userId = User.Identity.GetUserId();
+
+            var viewModel = new CourseCategoriesViewModel()
+            {
+                Course = courseInDb,
+                Categories = _context.Categories.ToList()
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
         public ActionResult Edit(Course course)
         {
             if (!ModelState.IsValid)
@@ -87,7 +113,10 @@ namespace ASPDevApp.Controllers
                 };
                 return View(viewModel);
             }
-            var courseInDb = _context.Courses.SingleOrDefault(t => t.Id == course.Id);
+            var userId = User.Identity.GetUserId();
+            var courseInDb = _context.Courses
+                
+                .SingleOrDefault(t => t.Id == course.Id);//.Where(t => t.UserId.Equals(userId))
 
             courseInDb.Name = course.Name;
             courseInDb.Description = course.Description;
@@ -95,6 +124,6 @@ namespace ASPDevApp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
+
 }

@@ -13,6 +13,7 @@ namespace ASPDevApp.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<TrainerProfile> TrainerProfiles { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<UserInfo> UsersInfos { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
