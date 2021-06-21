@@ -13,6 +13,7 @@ namespace ASPDevApp.Models
     {
         
         [Key]
+        [Foreingnkey("User")]
         public string TraineeId { get; set; }
         [Required(ErrorMessage = "Name should not be Empty !!!")]
         [StringLength(255)]
@@ -37,8 +38,6 @@ namespace ASPDevApp.Models
         public int Toeic { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-      
-        public string UserId { get; set; }
         public ApplicationUser User { get; set; }
 
     }

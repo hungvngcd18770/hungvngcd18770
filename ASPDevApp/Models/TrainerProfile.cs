@@ -13,7 +13,9 @@ namespace ASPDevApp.Models
     {
         
         [Key]
+        [Foreingnkey("User")]
         public string TrainerId { get; set; }
+        
         [Required(ErrorMessage = "Name should not be Empty !!!")]
         [StringLength(255)]
         [DisplayName("Trainer Name")]
@@ -47,7 +49,7 @@ namespace ASPDevApp.Models
         public TypeTrainer Type { get; set; }
         public int? CourseId { get; set; }
         public Course Course { get; set; }
-        public string UserId { get; set; }
+
         public ApplicationUser User { get; set; }
     }
 }

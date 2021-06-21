@@ -212,6 +212,10 @@
     <Compile Include="Migrations\202106201256499_addUserInfo.Designer.cs">
       <DependentUpon>202106201256499_addUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106210307420_AddFKTrainerAndTrainee.cs" />
+    <Compile Include="Migrations\202106210307420_AddFKTrainerAndTrainee.Designer.cs">
+      <DependentUpon>202106210307420_AddFKTrainerAndTrainee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106201256499_addUserInfo.resx">
       <DependentUpon>202106201256499_addUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106210307420_AddFKTrainerAndTrainee.resx">
+      <DependentUpon>202106210307420_AddFKTrainerAndTrainee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
