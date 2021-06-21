@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ASPDevApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "staff")]
     public class TraineeProfilesController : Controller
     {
         private ApplicationDbContext _context;
@@ -41,23 +41,21 @@ namespace ASPDevApp.Controllers
              return View();
          }
 
-         [HttpPost]
-         public ActionResult Create(TraineeProfile traineeProfile)
-         {
-             if (!ModelState.IsValid)
-             {
-                 return View(traineeProfile);
-             }
-             var newTraineeProfile = new TraineeProfile();
-
-
-             newTraineeProfile.Name = traineeProfile.Name;
-             newTraineeProfile.Age = traineeProfile.Age;
-             newTraineeProfile.Education = traineeProfile.Education;
-             newTraineeProfile.Birthday = traineeProfile.Birthday;
-             newTraineeProfile.ProgramingLanguage = traineeProfile.ProgramingLanguage;
-             newTraineeProfile.Toeic = traineeProfile.Toeic;
-
+        [HttpPost]
+        public ActionResult Create(TraineeProfile traineeProfile)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(traineeProfile);
+            }
+            var userId = User.Identity.GetUserId();
+            var newTraineeProfile = new TraineeProfile();
+            newTraineeProfile.Name = traineeProfile.Name;
+            newTraineeProfile.Age = traineeProfile.Age;
+            newTraineeProfile.Education = traineeProfile.Education;
+            newTraineeProfile.Birthday = traineeProfile.Birthday;
+            newTraineeProfile.ProgramingLanguage = traineeProfile.ProgramingLanguage;
+            newTraineeProfile.Toeic = traineeProfile.Toeic; 
              _context.TraineeProfiles.Add(newTraineeProfile);
              _context.SaveChanges();
              return RedirectToAction("Index");

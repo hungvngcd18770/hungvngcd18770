@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ASPDevApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "staff")]
     public class TrainerProfilesController : Controller
     {
         private ApplicationDbContext _context;

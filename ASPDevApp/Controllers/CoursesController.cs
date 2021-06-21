@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace ASPDevApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "staff")]
     public class CoursesController : Controller
     {
 

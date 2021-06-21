@@ -35,16 +35,16 @@
                 <td>@item.Description</td>
                 <td>@item.Category.Name</td>
                 <td>
-                    @Html.ActionLink("Update Course", "Update", "Courses",
+                    @Html.ActionLink("Edit Course", "Edit", "Courses",
                               new { id = item.Id },
                               new { @class = "btn btn-primary" })
                     @Html.ActionLink("Delete this Course", "Delete", "Courses",
                                  new { id = item.Id },
                                  new { @class = "btn btn-danger" })
-                    @Html.ActionLink("List Trainer", "Index", "AssignTrainerCourses",
+                    @Html.ActionLink("List Trainer", "Index", "DecentralizationTrainer",
                              new { id = item.Id },
                              new { @class = "btn btn-success" })
-                    @Html.ActionLink("List Trainee", "Index", "AssignTraineeCourses",
+                    @Html.ActionLink("List Trainee", "Index", "DecentralizationTrainee",
                                 new { id = item.Id },
                                 new { @class = "btn btn-success" })
                 </td>
