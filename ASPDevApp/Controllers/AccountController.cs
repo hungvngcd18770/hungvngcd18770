@@ -24,6 +24,7 @@ namespace ASPDevApp.Controllers
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
