@@ -14,11 +14,12 @@ namespace ASPDevApp.Controllers
     public class TraineeProfilesController : Controller
     {
         private ApplicationDbContext _context;
-
+        private UserManager<ApplicationUser> _userManager;
         public TraineeProfilesController()
         {
             _context = new ApplicationDbContext();
-
+            _userManager = new UserManager<ApplicationUser>(
+                new UserStore<ApplicationUser>(new ApplicationDbContext()));
         }
         
         public ActionResult Index(string searchString)
@@ -49,7 +50,11 @@ namespace ASPDevApp.Controllers
                 return View(traineeProfile);
             }
             var userId = User.Identity.GetUserId();
+
+            _context.UsersInfos.Where(t => t.UserId.Equals(userId));
             var newTraineeProfile = new TraineeProfile();
+
+            newTraineeProfile.CourseId = traineeProfile.CourseId;
             newTraineeProfile.Name = traineeProfile.Name;
             newTraineeProfile.Age = traineeProfile.Age;
             newTraineeProfile.Education = traineeProfile.Education;

@@ -1,4 +1,4 @@
-﻿@model ASPDevApp.Models.TraineeProfile
+﻿@model ASPDevApp.ViewModel.TraineeUserCourseViewModel
 @{
     ViewBag.Title = "Create";
 }
@@ -8,37 +8,50 @@
 @using (Html.BeginForm("Create", "TraineeProfiles", "POST"))
 {
     <div class="form-group">
-        @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.TraineeProfile.Name)
+        @Html.TextBoxFor(model => model.TraineeProfile.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Name, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.Age)
-        @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.TraineeProfile.Age)
+        @Html.TextBoxFor(model => model.TraineeProfile.Age, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Age, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.Education)
-        @Html.TextBoxFor(model => model.Education, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.TraineeProfile.Education)
+        @Html.TextBoxFor(model => model.TraineeProfile.Education, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Education, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.Birthday)
-        @Html.TextBoxFor(model => model.Birthday,
+        @Html.LabelFor(model => model.TraineeProfile.Birthday)
+        @Html.TextBoxFor(model => model.TraineeProfile.Birthday,
                      new { @class = "form-control", @type = "date" })
-        @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Birthday, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.ProgramingLanguage)
-        @Html.TextBoxFor(model => model.ProgramingLanguage, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.ProgramingLanguage, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.TraineeProfile.ProgramingLanguage)
+        @Html.TextBoxFor(model => model.TraineeProfile.ProgramingLanguage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.ProgramingLanguage, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.Toeic)
-        @Html.TextBoxFor(model => model.Toeic, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Toeic, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.TraineeProfile.Toeic)
+        @Html.TextBoxFor(model => model.TraineeProfile.Toeic, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Toeic, "", new { @class = "text-danger" })
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.TraineeProfile.User)
+        @Html.DropDownListFor(model => model.TraineeProfile.User.UserName,
+         new SelectList(Model.TraineeProfile.User.UserName, "User", "User"),
+         new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.User.UserName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TraineeProfile.Course.Name)
+        @Html.DropDownListFor(model => model.TraineeProfile.Course,
+         new SelectList(Model.TraineeProfile.Course.Name, "Course", "Course"),
+         new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TraineeProfile.Course.Name, "", new { @class = "text-danger" })
+    </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Create new Profile</button>
     </div>

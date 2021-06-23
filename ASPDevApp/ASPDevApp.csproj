@@ -177,6 +177,7 @@
     <Compile Include="Controllers\TraineeProfilesController.cs" />
     <Compile Include="Controllers\TrainerProfilesController.cs" />
     <Compile Include="Controllers\UserInfosController.cs" />
+    <Compile Include="Controllers\UserTraineeTrainerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +217,10 @@
     <Compile Include="Migrations\202106210307420_AddFKTrainerAndTrainee.Designer.cs">
       <DependentUpon>202106210307420_AddFKTrainerAndTrainee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106221535433_usertrainee.cs" />
+    <Compile Include="Migrations\202106221535433_usertrainee.Designer.cs">
+      <DependentUpon>202106221535433_usertrainee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -234,6 +239,7 @@
     <Compile Include="ViewModel\CourseCategoriesViewModel.cs" />
     <Compile Include="ViewModel\ListTraineeCoursesViewModel.cs" />
     <Compile Include="ViewModel\ListTrainerCoursesViewModel.cs" />
+    <Compile Include="ViewModel\TraineeUserCourseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -315,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserTraineeTrainer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -356,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106210307420_AddFKTrainerAndTrainee.resx">
       <DependentUpon>202106210307420_AddFKTrainerAndTrainee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221535433_usertrainee.resx">
+      <DependentUpon>202106221535433_usertrainee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
