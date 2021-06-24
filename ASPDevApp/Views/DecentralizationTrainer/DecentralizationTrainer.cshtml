@@ -27,7 +27,7 @@
                 <td>@item.Email</td>
                 <td>@item.Type</td>
                 <td>
-                    @using (Html.BeginForm("DecentralizationTrainerController", "DecentralizationTrainerController", "POST"))
+                    @using (Html.BeginForm("DecentralizationTrainer", "DecentralizationTrainer", "POST"))
                     {
                         <div>
                             <input type="hidden" name="courseId" value="@Model.Course.Id">
